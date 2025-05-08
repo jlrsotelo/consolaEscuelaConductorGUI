@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="AddEstablishment">
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="form.AddEstablishment">
   <grid id="27dc6" binding="ContentPane" layout-manager="GridLayoutManager" row-count="10" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="10" left="10" bottom="10" right="10"/>
     <constraints>
@@ -34,7 +34,7 @@
           <text value="UBIGEO"/>
         </properties>
       </component>
-      <component id="d9577" class="javax.swing.JTextField" binding="textField1" default-binding="true">
+      <component id="d9577" class="javax.swing.JTextField" binding="txtUbigeo">
         <constraints>
           <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
@@ -88,11 +88,13 @@
         </constraints>
         <properties>
           <model>
-            <item value="[SELECCIONE]"/>
-            <item value="CENTROS MEDICOS"/>
-            <item value="ESCUELA DE CONDUCTORES"/>
-            <item value="CENTROS DE EVALUACION"/>
+            <item value="0"/>
+            <item value="1"/>
+            <item value="2"/>
+            <item value="3"/>
           </model>
+          <name value=""/>
+          <selectedIndex value="0"/>
         </properties>
       </component>
       <component id="8d808" class="javax.swing.JLabel" binding="lblAddress">
@@ -125,9 +127,9 @@
         </constraints>
         <properties>
           <model>
-            <item value="[SELECCIONE]"/>
-            <item value="CON AUTORIZACION"/>
-            <item value="SIN AUTORIZACION"/>
+            <item value="0"/>
+            <item value="1"/>
+            <item value="2"/>
           </model>
         </properties>
       </component>
