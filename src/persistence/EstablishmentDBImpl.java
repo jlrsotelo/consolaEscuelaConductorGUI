@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class EstablishmentDBImpl implements EstablishmentDB {
-    private final String SQL_INSERT ="insert into ESTABLISHMENT(CESTABLISHMENT, CUBIGEO, NRUC, TYPE, NAME, ADDRESS, STATE, EMAIL, PHONE) values (?,?,?,?,?,?,?,?,?)";
+    private final String SQL_INSERT ="insert into ESTABLISHMENT(CESTABLISHMENT, CUBIGEO, NRUC, TYPE, NAME, ADDRESS, STATE, EMAIL, PHONE) values (SEQ_ESTABLISHMENT.NEXTVAL,?,?,?,?,?,?,?,?)";
     private final String SQL_SELECT_ALL ="{call PKG_ESTABLISHMENT.SP_LIST_ALL(?)}";
     @Override
     public List<Establishment> list() throws SQLException {
@@ -48,15 +48,14 @@ public class EstablishmentDBImpl implements EstablishmentDB {
         try {
             Connection cn = db.conectar();
             PreparedStatement ps = cn.prepareStatement(SQL_INSERT);
-            ps.setLong(1, establishment.getcEstablishment());
-            ps.setString(2, establishment.getcUbigeo());
-            ps.setString(3, establishment.getnRuc());
-            ps.setString(4, establishment.getType());
-            ps.setString(5, establishment.getName());
-            ps.setString(6, establishment.getAddress());
-            ps.setString(7, establishment.getState());
-            ps.setString(8, establishment.getEmail());
-            ps.setString(9, establishment.getPhone());
+            ps.setString(1, establishment.getcUbigeo());
+            ps.setString(2, establishment.getnRuc());
+            ps.setString(3, establishment.getType());
+            ps.setString(4, establishment.getName());
+            ps.setString(5, establishment.getAddress());
+            ps.setString(6, establishment.getState());
+            ps.setString(7, establishment.getEmail());
+            ps.setString(8, establishment.getPhone());
             ps.executeUpdate();
             ps.close();
             cn.close();

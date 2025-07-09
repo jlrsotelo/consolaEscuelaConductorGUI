@@ -10,7 +10,6 @@ import java.awt.event.ActionListener;
 
 public class AddEstablishment{
     private JPanel ContentPane;
-    private JLabel lblCode;
     private JTextField txtCode;
     private JLabel lblUbigeo;
     private JTextField txtUbigeo;
@@ -40,7 +39,6 @@ public class AddEstablishment{
             private void register() {
                 EstablishmentDB establishmentDB=new EstablishmentDBImpl();
                 Establishment establishment=new Establishment();
-                establishment.setcEstablishment(Long.valueOf(txtCode.getText()));
                 establishment.setcUbigeo(txtUbigeo.getText());
                 establishment.setnRuc(txtRuc.getText());
                 establishment.setType(cmbType.getModel().getSelectedItem().toString());
